@@ -119,3 +119,18 @@ print("______________________________________________________")
 pattern = "\d+(?![A-Za-z])"
 print(re.findall(pattern, string))  # ['010292291', '69530732', '1414757474']
 print("______________________________________________________")
+
+string = "Andy Smith, Jim Brown, Lisa Smith, Sue Brown, Amit    , Raj."
+# Look ahead positive (?=)
+# A(?=B) A where expression B follows:
+pattern = r"\w+(?=\sBrown,)"
+print(re.findall(pattern, string))
+
+print("______________________________________________________")
+
+# A(?=B)
+pattern = "\w+\s*\w*(?=[,.])"
+print(re.findall(pattern, string))
+
+
+
